@@ -4,7 +4,7 @@ abstract class KeysListState extends Equatable {}
 
 class KeysListInitial extends KeysListState {
   @override
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [];
 }
 
 class KeysLoadingState extends KeysListState {
@@ -13,10 +13,12 @@ class KeysLoadingState extends KeysListState {
 }
 
 class KeysLoadedState extends KeysListState {
-  final List<KeysListModel> keys;
-  KeysLoadedState(this.keys);
+  final ActivityModel activity;
+  KeysLoadedState(this.activity);
+
+  String get activities => activity.activity.toString();
   @override
-  List<Object?> get props => [keys];
+  List<Object?> get props => [activity];
 }
 
 class KeysErrorState extends KeysListState {

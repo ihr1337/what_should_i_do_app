@@ -1,14 +1,14 @@
 class KeysListModel {
-  String? activities;
+  String? activity;
   String? type;
   int? participants;
   double? price;
   String? link;
-  int? key;
-  int? accessibility;
+  String? key;
+  double? accessibility;
 
   KeysListModel({
-    this.activities,
+    this.activity,
     this.type,
     this.participants,
     this.price,
@@ -18,7 +18,7 @@ class KeysListModel {
   });
 
   KeysListModel.fromJson(Map<String, dynamic> json) {
-    activities = json['activities'];
+    activity = json['activity'];
     type = json['type'];
     participants = json['participants'];
     price = json['price'];

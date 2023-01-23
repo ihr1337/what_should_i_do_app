@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:what_should_i_do/common/common_template.dart';
+import 'package:what_should_i_do/core/common/common_template.dart';
+
+import '../../second_module.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,7 +19,11 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                  onPressed: () => Modular.to.navigate('/second'),
+                  onPressed: () {
+                    Modular.to.push(
+                      MaterialPageRoute(builder: (context) => SecondModule()),
+                    );
+                  },
                   child: const SizedBox(
                     child: Text('Next page'),
                   ))
